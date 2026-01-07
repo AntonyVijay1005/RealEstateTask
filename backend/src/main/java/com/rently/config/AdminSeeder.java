@@ -17,17 +17,19 @@ public class AdminSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        if (!userRepository.existsByEmail("admin@rently.com")) {
-            User admin = User.builder()
-                    .firstName("System")
-                    .lastName("Administrator")
-                    .email("admin@rently.com")
-                    .password(passwordEncoder.encode("admin123"))
-                    .role(Role.ADMIN)
-                    .phoneNumber("0000000000")
-                    .build();
-            userRepository.save(admin);
-            System.out.println("ADMIN ACCOUNT CREATED: admin@rently.com / admin123");
-        }
+        User admin = userRepository.findByEmail("admin@rently.com")
+                .orElseGet(() -> User.builder()
+                        .firstName("System")
+                        .lastName("Administrator")
+                        .email("admin@rently.com")
+                        .role(Role.ADMIN)
+                        .phoneNumber("0000000000")
+                        .build());
+
+        // Always enforce the password
+        admin.setPassword(passwordEncoder.encode("admin123"));
+        userRepository.save(admin);
+
+        System.out.println("ADMIN ACCOUNT ENFORCED: admin@rently.com / admin123");
     }
 }
