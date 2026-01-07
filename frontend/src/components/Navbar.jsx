@@ -107,9 +107,35 @@ const Navbar = () => {
 
                             {isAuthenticated ? (
                                 <div className="pt-4 mt-2 border-t">
-                                    <div className="flex items-center px-3 mb-3">
-                                        <span className="text-base font-medium">{user?.firstName}</span>
+                                    {/* Mobile Role-Based Links */}
+                                    {user?.role === 'ADMIN' && (
+                                        <Link to="/admin" className="block px-3 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground rounded-md">
+                                            Admin Dashboard
+                                        </Link>
+                                    )}
+
+                                    {(user?.role === 'OWNER' || user?.role === 'ADMIN') && (
+                                        <>
+                                            <Link to="/add-property" className="block px-3 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground rounded-md">
+                                                List Property
+                                            </Link>
+                                            <Link to="/my-properties" className="block px-3 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground rounded-md">
+                                                {user?.role === 'ADMIN' ? 'Manage Listings' : 'My Properties'}
+                                            </Link>
+                                            <Link to="/enquiries" className="block px-3 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground rounded-md">
+                                                Enquiries
+                                            </Link>
+                                        </>
+                                    )}
+
+                                    <div className="flex items-center px-3 mb-3 mt-4">
+                                        <span className="text-base font-medium">Hello, {user?.firstName}</span>
                                     </div>
+
+                                    <Link to="/profile" className="block px-3 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground rounded-md mb-2">
+                                        Profile
+                                    </Link>
+
                                     <Button variant="destructive" className="w-full" onClick={handleLogout}>
                                         Logout
                                     </Button>
