@@ -44,6 +44,8 @@ public class Property {
     private PropertyType type;
 
     @ElementCollection
+    @CollectionTable(name = "property_images", joinColumns = @JoinColumn(name = "property_id"))
+    @Column(name = "image_url")
     private List<String> images;
 
     @ManyToOne
