@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: rently-backend
+    runtime: docker
+    env: static
+    buildCommand: ""
+    # Render will automatically use the Dockerfile in the backend directory
+    dockerContext: backend
+    dockerFilePath: backend/Dockerfile
+    plan: free
+    region: singapore
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 8080
+      - key: ALLOWED_ORIGINS
+        value: "*"
