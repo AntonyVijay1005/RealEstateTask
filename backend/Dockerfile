@@ -11,4 +11,4 @@ WORKDIR /app
 # Copy the jar file explicitly, handling potential version naming differences by using wildcard but renaming to app.jar
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-XX:MaxRAMPercentage=75.0", "-XX:InitialRAMPercentage=50.0", "-jar", "app.jar"]
