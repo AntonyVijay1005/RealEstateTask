@@ -12,9 +12,11 @@ C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\Adm
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\enums\PropertyType.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\service\EnquiryService.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\TrendDataPoint.java
+C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\controller\HealthController.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\UserDto.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\RentlyApplication.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\repository\EnquiryRepository.java
+C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\config\SchemaFixer.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\controller\PropertyController.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\PredictionResponse.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\enums\Role.java

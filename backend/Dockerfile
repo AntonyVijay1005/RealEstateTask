@@ -8,6 +8,7 @@ RUN mvn clean package -DskipTests
 # Run stage
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
+# Copy the jar file explicitly, handling potential version naming differences by using wildcard but renaming to app.jar
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]

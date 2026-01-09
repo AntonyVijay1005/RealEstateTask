@@ -12,6 +12,7 @@ com\rently\controller\AdminController.class
 com\rently\dto\EnquiryResponse.class
 com\rently\entity\User.class
 com\rently\service\AdminService.class
+com\rently\config\SchemaFixer.class
 com\rently\controller\PropertyController.class
 com\rently\service\AuthenticationService.class
 com\rently\service\PropertyService.class
@@ -35,6 +36,7 @@ com\rently\enums\Role.class
 com\rently\entity\Property.class
 com\rently\entity\Enquiry$EnquiryBuilder.class
 com\rently\config\JwtService.class
+com\rently\controller\HealthController.class
 com\rently\dto\EnquiryResponse$EnquiryResponseBuilder.class
 com\rently\entity\Enquiry.class
 com\rently\dto\AuthenticationRequest$AuthenticationRequestBuilder.class
@@ -44,6 +46,8 @@ com\rently\entity\Property$PropertyBuilder.class
 com\rently\dto\UserUpdateRequest$UserUpdateRequestBuilder.class
 com\rently\exception\GlobalExceptionHandler$ErrorResponse.class
 com\rently\controller\PricePredictionController.class
+com\rently\dto\TrendDataPoint$TrendDataPointBuilder.class
+com\rently\dto\TrendDataPoint.class
 com\rently\service\UserService.class
 com\rently\enums\EnquiryStatus.class
 com\rently\dto\PredictionRequest.class
@@ -51,6 +55,7 @@ com\rently\config\DbSeeder.class
 com\rently\controller\UserController.class
 com\rently\dto\AuthenticationResponse.class
 com\rently\dto\PropertyUpdateRequest$PropertyUpdateRequestBuilder.class
+com\rently\controller\EnquiryController.class
 com\rently\service\PricePredictionService.class
 com\rently\dto\AdminStatsResponse$AdminStatsResponseBuilder.class
 com\rently\dto\AuthenticationRequest.class

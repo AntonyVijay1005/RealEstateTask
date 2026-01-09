@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: rently-backend
+    runtime: docker
+    repo: https://github.com/AntonyVijay1005/RealEstateTask # Replacing with generic repo URL structure, user should verify or it will auto-detect from connected repo
+    plan: free
+    region: singapore # best effort guess based on user likely location or default
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 8080
+      - key: ALLOWED_ORIGINS
+        value: "*" 
