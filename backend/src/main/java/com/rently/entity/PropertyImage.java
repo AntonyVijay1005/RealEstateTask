@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import lombok.ToString;
+import lombok.EqualsAndHashCode;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -23,5 +26,7 @@ public class PropertyImage {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "property_id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Property property;
 }
