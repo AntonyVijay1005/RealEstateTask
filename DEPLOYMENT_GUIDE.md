@@ -11,9 +11,9 @@ This guide outlines the steps to deploy your Full Stack Spring Boot + React appl
 2.  **Accounts**:
     *   Create a [Render Account](https://render.com).
     *   Create a [Vercel Account](https://vercel.com).
-    *   (Optional but recommended) A managed MySQL database (e.g., Aiven, DigitalOcean, or Render's PostgreSQL if you switch drivers). *This guide assumes you have a MySQL Connection URL.*
-        *   *Note*: You can use [Aiven for MySQL](https://aiven.io/mysql) (Free tier) to get a MySQL database URL.
-        *   The URL usually looks like: `mysql://user:password@host:port/defaultdb?ssl-mode=REQUIRED`
+    *   (Optional but recommended) A managed MySQL database. *This guide assumes you have a MySQL Connection URL.*
+        *   *Note*: You can use [TiDB Cloud](https://pingcap.com/tidb-cloud) (Serverless Free tier) to get a MySQL-compatible database.
+        *   The URL usually looks like: `jdbc:mysql://<HOST>:<PORT>/test?useSSL=true&enabledTLSProtocols=TLSv1.2,TLSv1.3`
 
 ---
 
