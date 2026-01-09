@@ -43,10 +43,8 @@ public class Property {
     @Enumerated(EnumType.STRING)
     private PropertyType type;
 
-    @ElementCollection
-    @CollectionTable(name = "property_images", joinColumns = @JoinColumn(name = "property_id"))
-    @Column(name = "image_url")
-    private List<String> images;
+    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PropertyImage> images;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")

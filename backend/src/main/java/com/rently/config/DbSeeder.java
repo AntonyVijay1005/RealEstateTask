@@ -80,9 +80,12 @@ public class DbSeeder implements CommandLineRunner {
                                 .bathrooms(3)
                                 .yearBuilt(2022)
                                 .type(PropertyType.VILLA)
-                                .images(List.of("https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"))
                                 .owner(owner1)
                                 .build();
+                p1.setImages(List.of(com.rently.entity.PropertyImage.builder()
+                                .imageUrl("https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop")
+                                .property(p1)
+                                .build()));
 
                 Property p2 = Property.builder()
                                 .title("Urban Apartment in New York")
@@ -94,9 +97,12 @@ public class DbSeeder implements CommandLineRunner {
                                 .bathrooms(2)
                                 .yearBuilt(2019)
                                 .type(PropertyType.APARTMENT)
-                                .images(List.of("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"))
                                 .owner(owner1)
                                 .build();
+                p2.setImages(List.of(com.rently.entity.PropertyImage.builder()
+                                .imageUrl("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop")
+                                .property(p2)
+                                .build()));
 
                 Property p3 = Property.builder()
                                 .title("Cozy House in Austin")
@@ -108,9 +114,12 @@ public class DbSeeder implements CommandLineRunner {
                                 .bathrooms(2)
                                 .yearBuilt(2015)
                                 .type(PropertyType.HOUSE)
-                                .images(List.of("https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop"))
                                 .owner(owner2)
                                 .build();
+                p3.setImages(List.of(com.rently.entity.PropertyImage.builder()
+                                .imageUrl("https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop")
+                                .property(p3)
+                                .build()));
 
                 Property p4 = Property.builder()
                                 .title("Luxury Penthouse in LA")
@@ -122,9 +131,12 @@ public class DbSeeder implements CommandLineRunner {
                                 .bathrooms(4)
                                 .yearBuilt(2023)
                                 .type(PropertyType.APARTMENT)
-                                .images(List.of("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"))
                                 .owner(owner2)
                                 .build();
+                p4.setImages(List.of(com.rently.entity.PropertyImage.builder()
+                                .imageUrl("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop")
+                                .property(p4)
+                                .build()));
 
                 Property p5 = Property.builder()
                                 .title("Spacious Land in Seattle")
@@ -136,9 +148,12 @@ public class DbSeeder implements CommandLineRunner {
                                 .bathrooms(0)
                                 .yearBuilt(2024)
                                 .type(PropertyType.LAND)
-                                .images(List.of("https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop"))
                                 .owner(owner1)
                                 .build();
+                p5.setImages(List.of(com.rently.entity.PropertyImage.builder()
+                                .imageUrl("https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop")
+                                .property(p5)
+                                .build()));
 
                 propertyRepository.saveAll(List.of(p1, p2, p3, p4, p5));
 
