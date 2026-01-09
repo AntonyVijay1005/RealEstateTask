@@ -36,18 +36,9 @@ public class PropertyService {
                                 .bathrooms(request.getBathrooms())
                                 .yearBuilt(request.getYearBuilt())
                                 .type(request.getType())
+                                .images(request.getImages())
                                 .owner(owner)
                                 .build();
-
-                if (request.getImages() != null) {
-                        List<com.rently.entity.PropertyImage> propertyImages = request.getImages().stream()
-                                        .map(url -> com.rently.entity.PropertyImage.builder()
-                                                        .imageUrl(url)
-                                                        .property(property)
-                                                        .build())
-                                        .collect(Collectors.toList());
-                        property.setImages(propertyImages);
-                }
 
                 Property savedProperty = propertyRepository.save(property);
                 return mapToDto(savedProperty);
@@ -102,18 +93,7 @@ public class PropertyService {
                 property.setBathrooms(request.getBathrooms());
                 property.setYearBuilt(request.getYearBuilt());
                 property.setType(request.getType());
-
-                // Clear existing images and add new ones if provided
-                if (request.getImages() != null) {
-                        property.getImages().clear();
-                        List<com.rently.entity.PropertyImage> newImages = request.getImages().stream()
-                                        .map(url -> com.rently.entity.PropertyImage.builder()
-                                                        .imageUrl(url)
-                                                        .property(property)
-                                                        .build())
-                                        .collect(Collectors.toList());
-                        property.getImages().addAll(newImages);
-                }
+                property.setImages(request.getImages());
 
                 Property updated = propertyRepository.save(property);
                 return mapToDto(updated);
@@ -137,12 +117,6 @@ public class PropertyService {
         }
 
         private PropertyDto mapToDto(Property property) {
-                List<String> imageUrls = property.getImages() != null
-                                ? property.getImages().stream()
-                                                .map(com.rently.entity.PropertyImage::getImageUrl)
-                                                .collect(Collectors.toList())
-                                : List.of();
-
                 return PropertyDto.builder()
                                 .id(property.getId())
                                 .title(property.getTitle())
@@ -154,7 +128,7 @@ public class PropertyService {
                                 .bathrooms(property.getBathrooms())
                                 .yearBuilt(property.getYearBuilt())
                                 .type(property.getType())
-                                .images(imageUrls)
+                                .images(property.getImages())
                                 .ownerId(property.getOwner().getId())
                                 .ownerName(property.getOwner().getFirstName() + " " + property.getOwner().getLastName())
                                 .build();

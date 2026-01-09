@@ -8,7 +8,6 @@ RUN mvn clean package -DskipTests
 # Run stage
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
-# Copy the executable jar (renamed by finalName in pom.xml)
-COPY --from=build /app/target/app.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-XX:MaxRAMPercentage=75.0", "-XX:InitialRAMPercentage=50.0", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

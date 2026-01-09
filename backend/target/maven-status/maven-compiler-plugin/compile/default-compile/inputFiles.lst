@@ -12,7 +12,6 @@ C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\Adm
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\enums\PropertyType.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\service\EnquiryService.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\TrendDataPoint.java
-C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\controller\HealthController.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\UserDto.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\RentlyApplication.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\repository\EnquiryRepository.java
@@ -22,7 +21,6 @@ C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\enums\R
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\service\AuthenticationService.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\service\PricePredictionService.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\PropertyDto.java
-C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\entity\PropertyImage.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\exception\GlobalExceptionHandler.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\service\PropertyService.java
 C:\Users\anton\OneDrive\Desktop\testing\backend\src\main\java\com\rently\dto\PropertyRequest.java

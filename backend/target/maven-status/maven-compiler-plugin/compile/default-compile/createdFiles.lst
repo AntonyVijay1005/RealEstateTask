@@ -2,9 +2,7 @@ com\rently\config\ApplicationConfig.class
 com\rently\config\JwtAuthenticationFilter.class
 com\rently\controller\AuthenticationController.class
 com\rently\repository\EnquiryRepository.class
-com\rently\entity\PropertyImage$PropertyImageBuilder.class
 com\rently\dto\RegisterRequest$RegisterRequestBuilder.class
-com\rently\entity\PropertyImage.class
 com\rently\enums\PropertyType.class
 com\rently\service\EnquiryService.class
 com\rently\dto\UserDto$UserDtoBuilder.class
@@ -37,7 +35,6 @@ com\rently\enums\Role.class
 com\rently\entity\Property.class
 com\rently\entity\Enquiry$EnquiryBuilder.class
 com\rently\config\JwtService.class
-com\rently\controller\HealthController.class
 com\rently\dto\EnquiryResponse$EnquiryResponseBuilder.class
 com\rently\entity\Enquiry.class
 com\rently\dto\AuthenticationRequest$AuthenticationRequestBuilder.class
