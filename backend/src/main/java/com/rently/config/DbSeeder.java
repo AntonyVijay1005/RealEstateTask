@@ -24,20 +24,31 @@ public class DbSeeder implements CommandLineRunner {
 
         @Override
         public void run(String... args) {
-                if (userRepository.count() > 0) {
-                        return; // Already seeded
+                // --- Ensure Admin User and Password ---
+                userRepository.findByEmail("admin@rently.com").ifPresentOrElse(
+                                admin -> {
+                                        admin.setPassword(passwordEncoder.encode("admin123"));
+                                        userRepository.save(admin);
+                                        System.out.println("✅ ADMIN PASSWORD ENFORCED: admin123");
+                                },
+                                () -> {
+                                        User admin = User.builder()
+                                                        .firstName("Admin")
+                                                        .lastName("User")
+                                                        .email("admin@rently.com")
+                                                        .password(passwordEncoder.encode("admin123"))
+                                                        .role(Role.ADMIN)
+                                                        .phoneNumber("1234567890")
+                                                        .build();
+                                        userRepository.save(admin);
+                                        System.out.println("✅ ADMIN CREATED: admin@rently.com / admin123");
+                                });
+
+                if (userRepository.count() > 1) {
+                        return; // Already has other users, skip property seeding
                 }
 
-                // --- Create Users ---
-
-                User admin = User.builder()
-                                .firstName("Admin")
-                                .lastName("User")
-                                .email("admin@rently.com")
-                                .password(passwordEncoder.encode("Admin@123"))
-                                .role(Role.ADMIN)
-                                .phoneNumber("1234567890")
-                                .build();
+                // --- Create Other Users ---
 
                 User owner1 = User.builder()
                                 .firstName("John")
@@ -66,7 +77,7 @@ public class DbSeeder implements CommandLineRunner {
                                 .phoneNumber("1112223333")
                                 .build();
 
-                userRepository.saveAll(List.of(admin, owner1, owner2, buyer));
+                userRepository.saveAll(List.of(owner1, owner2, buyer));
 
                 // --- Create Properties ---
 
